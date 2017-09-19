@@ -1,6 +1,5 @@
 # vue2构建过程
-## 技术栈 vue2.0+element+vue Router+axios
-## 准备工作
+## 安装步骤
 ### 1.svn下载工程代码
 ### 2.安装nodeJs
 安装nodeJs(已经安装npm),将 npm 的注册表源设置为淘宝镜像
