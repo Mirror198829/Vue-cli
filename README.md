@@ -1,8 +1,23 @@
 # vue2构建过程
 ## 技术栈 vue2.0+element+vue Router+axios
 ## 准备工作
-### 安装nodeJs
+### 1.svn下载工程代码
+### 2.安装nodeJs
 安装nodeJs(已经安装npm),将 npm 的注册表源设置为淘宝镜像
+### 3.安装vue命令行工具vue-cli
+``` javascript
+# 全局安装 vue-cli
+$ cnpm install --global vue-cli
+```
+### 4.安装webpack
+`$ cnpm install webpack -g`
+### 5.下载依赖
+`$ cnpm install`
+### 6.启动服务
+`$ npm run dev`
+浏览器自动打开页面说明运行成功！
+
+<hr/>
 ### 安装vue命令行工具vue-cli
 ``` javascript
 # 全局安装 vue-cli
