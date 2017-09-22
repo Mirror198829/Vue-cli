@@ -1,23 +1,32 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view></router-view>
+   <router-view style="min-height:670px"></router-view>
+   <nl-footer></nl-footer>
   </div>
 </template>
 
 <script>
+import Footer from './components/footer.vue'
 export default {
-  name: 'app'
+  name: 'app',
+  data() {
+    return {
+      
+    };
+  },
+  methods: {
+
+  },
+  components: {
+    'nl-footer':Footer
+  },
+
 }
 </script>
-
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+body{margin:0;padding:0;}
+*{margin:0;padding:0;}
+a{color:#fff;text-decoration: none;}
 </style>
+
+

@@ -1,18 +1,16 @@
 require('./check-versions')()
 
-var config = require('../config')  //这边是指config文件夹下的index.js
+var config = require('../config')
 if (!process.env.NODE_ENV) {
   process.env.NODE_ENV = JSON.parse(config.dev.env.NODE_ENV)
 }
 
 var opn = require('opn')
-var path = require('path')    //path是nodejs提供的路径api
-var express = require('express')//nodejs框架，启动webserver
-var webpack = require('webpack')//使用会全局安装webpack，但是nodejs也提供了webpack的api
-var proxyMiddleware = require('http-proxy-middleware') //http协议代理的中间件
-var webpackConfig = process.env.NODE_ENV === 'testing'
-  ? require('./webpack.prod.conf')
-  : require('./webpack.dev.conf')        //在生产环境时，依赖此配置文件
+var path = require('path')
+var express = require('express')
+var webpack = require('webpack')
+var proxyMiddleware = require('http-proxy-middleware')
+var webpackConfig = require('./webpack.dev.conf')
 
 // default port where dev server listens for incoming traffic
 var port = process.env.PORT || config.dev.port
