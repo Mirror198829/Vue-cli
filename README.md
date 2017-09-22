@@ -15,8 +15,6 @@ $ cnpm install --global vue-cli
 ### 6.启动服务
 `$ npm run dev`
 浏览器自动打开页面说明运行成功！
-
-<hr/>
 ### 安装vue命令行工具vue-cli
 ``` javascript
 # 全局安装 vue-cli
