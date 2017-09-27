@@ -52,6 +52,7 @@ var webpackConfig = merge(baseWebpackConfig, {
     new HtmlWebpackPlugin({
       filename: config.build.index,
       template: 'index.html',
+      favicon: 'favicon.ico', // 在此处添加一行这个，用于webpack生成index.html时，自动把favicon.ico加入HTML中
       inject: true,
       minify: {
         removeComments: true,

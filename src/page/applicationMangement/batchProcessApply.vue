@@ -81,8 +81,7 @@
             </div>
             <div class="div-right  div-right-current-no"  v-for="(item,index) in module.items"  :div-id="index" v-if="!index == 0" >
                <p><br/></p>
-                <p>{{item.content}}</p>
-                   <p><br/></p>
+                <p v-for="item1 in  item.content">{{item1}}<br/></p>
               <img :src="item.imageUrl">
             </div>
           </div>
@@ -130,6 +129,37 @@
        </div>
        <!--第九个结束-->
 
+       <!--第十个开始-->
+        <div v-if="module.displayType === 10">
+          <div class="dark-group">
+            <div class="content-title">
+              <h2 x-model="module.title">{{module.title}}</h2>
+          </div>
+        <div class="content-box-item-num-10 clearfix">
+          <div class="content-box-item-num-10-left">
+            <ul>
+              <li v-for="(item,index) in module.items"  v-if="index === 0" class="ul-left ul-left-current" :li-id="index">{{item.title}}</li>
+              <li v-for="(item,index) in module.items"  v-if="!index == 0" class="ul-left ul-left-current-no" :li-id="index">{{item.title}}</li>
+            </ul>
+          </div>
+          <div class="content-box-item-num-10-right">
+            <div class="div-right div-right-current"  v-for="(item,index) in module.items"  :div-id="index"  v-if="index === 0" >
+              <p><br/></p>
+              <div v-for="item1 in  item.contents">{{item1}}</div>
+                 <p><br/></p>
+              <img :src="item.imageUrl">
+            </div>
+            <div class="div-right  div-right-current-no"  v-for="(item,index) in module.items"  :div-id="index" v-if="!index == 0" >
+                <div v-for="item1 in  item.contents">{{item1}}</div>
+              <img :src="item.imageUrl">
+            </div>
+          </div>
+        </div>
+      </div>
+
+       </div>
+       <!--第十个结束--->
+
       </div>
      </div>
 
@@ -152,49 +182,39 @@
 export default {
   data() {
     return {
-      h1Title: "微服务应用",
-      description: "将单个的整体应用程序分割成更小的项目关联的独立的服务。一个服务通常实现一组独立的特性或功能，包含自己的业务逻辑和适配器。各个微服务之间的关联通过暴露api来实现。这些独立的微服务不需要部署在同一个虚拟机，同一个系统和同一个应用服务器中",
+      h1Title: "批处理应用",
+      description: "批处理应用即为无状态应用，主要用于处理大批量数据或文件的系统，一般采用多线程方式执行，部署环境对批处理应用的性能有直接的影响，建议使用高性能多核CPU的机器发布批处理应用",
       modules: [{
           title: "产品优势",
           items: [{
             imageUrl: fun1,
-            title:"微服务构建与治理",
-            contents: ["提供多语言多协议高性能微服务框架，以及丰富的治理能力。","帮助用户快速构建基于微服务架构的分布式应用。"]
+            title:"动态扩容，HA，负载均衡",
+            contents: ["可以动态的增加或减少应用使用的资源。","对整体批处理应用而言是无感知的。"]
           }, {
             imageUrl: fun2,
-            title:"应用调度编排",
-            contents: ["提供大规模应用调度管理能力，提升资源的整体利用率，降低服务的使用成本。"]
+            title:"失败转移",
+            contents: ["部分任务执行失败以后会转移到其他资源上继续执行，不影响整体应用执行情况"]
           }, {
             imageUrl: fun3,
-            title:"调用链分析",
-            contents: ["监控微服务之间的调用性能，帮助用户快速定位应用的故障所在和性能瓶颈。"]
+            title:"资源隔离",
+            contents: ["将一部分应用的任务指定到特定资源上执行"]
           }, {
             imageUrl: fun4,
-            title:"中间件服务",
-            contents: ["提供中间件服务和服务接入能力，支撑新业务和存量业务上云。"]
+            title:"应用隔离",
+            contents: ["部分重要的应用对资源的要求比较高，给重要应用分配性能高的资源"]
           }],
           displayType: 9
         },
         {
-          title: "应用场景",
+          title: "要求",
           items: [{
-            imageUrl: fun1,
-            title:"移动云",
-            content: "打通开发与运维流程，用DevOps流水线快速构建应用，自动化部署，让业务敏捷灵活的面对市场快速变化下的挑战。"
+            title:"服务要求",
+            contents: ['①应用程序将读写请求全部发送给代理实例，代理实例自动分离读请求并均摊到只读实例上，剩余的读写请求发给主实例的主节点，从而扩展整体读能力','②主实例备节点、只读实例和主节点之间通过异步复制进行主从同步。']
           }, {
-            imageUrl: fun2,
-            title:"政务云",
-            content: "私有云+公有云解决方案，应对政务数据量大、分布散，查询难等复杂环境，打通管理层与业务系统，安全、便捷的实现数字化的管理和运营。。"
-          }, {
-            imageUrl: fun3,
-            title:"物联网",
-            content: "提供标准化，多语言的解决方案，依托多年的软硬件技术积累，实现物与网的极速高性能的互通。"
-          }, {
-            imageUrl: fun4,
-            title:"企业应用",
-            content: "通过微服务等开源框架及中间件，改进应用架构设计，提高开发运维效率。"
+            title:"技术要求",
+            contents: ['①支持丰富的数据源类型，包括文件系统（FTP服务器、SFTP服务器、集群节点、HDFS）、传统数据库/数据仓库（Oracle、MySQL、DB2、Teradata等）、MPP数据库（Vertica、GreenPlum、Gbase等）、大数据仓库（Hive、Hbase）、非结构化数据库（MongoDB等）','②支持多节点并发处理，以提高数据处理效率','③支持多线程并发处理，以提高数据处理效率','④支持多种数据库连接方式，包括专用数据库驱动接口、JDBC、ODBC接口等','⑤提供错误数据处理机制，能将发生错误的数据记录到相应的错误表中和错误数据重处理']
           }],
-          displayType: 8
+          displayType: 10
         },
         {
           title:"使用指南",
@@ -240,6 +260,26 @@ export default {
      $("li[li-id!='"+curId+"']").removeClass("ul-left-current");
 
     });
+
+
+
+   $(".content-box-item-num-10-left ul li").mouseover(function(){
+      $(".content-box-item-num-10-left ul li").css({"color":"#333","background-color":"#fff"});
+      $(this).css({"color":"#fff","background-color":"#2883D6"});
+    });
+    $(".content-box-item-num-10-left ul .ul-left").mouseover(function(){
+    var curId = $(this).attr("li-id");
+    $("div[div-id='"+curId+"']").addClass("div-right-current");
+     $("div[div-id!='"+curId+"']").addClass("div-right-current-no");
+     $("div[div-id='"+curId+"']").removeClass("div-right-current-no");
+     $("div[div-id!='"+curId+"']").removeClass("div-right-current");
+      $("li[li-id='"+curId+"']").addClass("ul-left-current");
+     $("li[li-id!='"+curId+"']").addClass("ul-left-current-no");
+     $("li[li-id='"+curId+"']").removeClass("ul-left-current-no");
+     $("li[li-id!='"+curId+"']").removeClass("ul-left-current");
+
+    });
+
   }
 }
 </script>
@@ -247,7 +287,8 @@ export default {
 <style scoped>
 .content-top{
   height: 350px;
-  background: #4b5154   url('../../assets/images/applicationManagement/microServiceApply/main-bg.jpg') 85% 50%  no-repeat;
+  background:    url('../../assets/images/applicationManagement/batchProcessApply/main-bg.jpg')  20%  20%  no-repeat;
+  background-size:100% 100%;
 }
 .content-title{
   text-align:left;
@@ -367,11 +408,63 @@ export default {
 .content-box-item-num-7-right img{
   align:center;
 }
+
 .content-box-item-num-7-right>.div-right-current-no{
   display:none;
 }
 .content-box-item-num-7-right>.div-right-current{
   display:true;
+}
+
+.content-box-item-num-10{
+  text-align: left;
+  background-color:#ffffff;
+  height:400px;
+  margin:5px;
+}
+.content-box-item-num-10-left{
+  width:25%;
+  float:left;
+}
+.content-box-item-num-10-left>ul>.ul-left{
+    padding: 20px 0 20px 56px;
+    color: #333;
+    font-size: 16px;
+    border: 1px solid #e6e6e6;
+    margin-top: -1px;
+    margin-bottom: -1px;
+    margin-left: -1px;
+    font-weight: 400;
+    cursor: pointer;
+}
+.content-box-item-num-10-left>ul>.ul-left-current{
+    border-right-color: #FFF;
+    border-left-color: #108cee;
+    color: #108cee;
+}
+.content-box-item-num-10-left>ul>.ul-left-current-no{
+  color: #333;
+  border-left-color: #e6e6e6;
+}
+.content-box-item-num-10-right{
+  width:70%;
+  float:left;
+  padding-left:25px;
+}
+.content-box-item-num-10-right p{
+  align:left;
+}
+.content-box-item-num-10-right img{
+  align:center;
+}
+.content-box-item-num-10-right>.div-right-current-no{
+  display:none;
+}
+.content-box-item-num-10-right>.div-right-current{
+  display:true;
+}
+.content-box-item-num-10-right>.div-right>div{
+  margin:30px;
 }
 .content-box-item-num-8{
   background-color:#ffffff;

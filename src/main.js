@@ -6,12 +6,13 @@ import router from './router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
 import $ from 'jquery'
+import ECharts from 'vue-echarts'
 //import VCharts from 'v-charts'
 
 import 'font-awesome/css/font-awesome.css'
 
 Vue.use(ElementUI)
-// Vue.use(VCharts)
+Vue.component('chart', ECharts)
 
 Vue.config.productionTip = false
 /* eslint-disable no-new */

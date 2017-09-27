@@ -6,6 +6,8 @@ import CloudCompute from '@/page/cloudCompute'
 import PhysicaMachineEnv from '../page/cloudCompute/compute/physicalMachineEnv.vue'
 import VirtualMachineEnv from '../page/cloudCompute/compute/virtualMachineEnv.vue'
 import K8SContainerEnv from '../page/cloudCompute/compute/k8sContainerEnv.vue'
+import newCreate from '../page/cloudCompute/compute/newCreate.vue'
+import infoDetail from '../page/cloudCompute/compute/infoDetail.vue'
 import MessosEnv from '../page/cloudCompute/compute/messosEnv.vue'
 import YarnEnv from '../page/cloudCompute/compute/yarnEnv.vue'
 import ObjectStorage from '../page/cloudCompute/storage/objectStorage.vue'
@@ -19,10 +21,15 @@ import Redis from '../page/serviceMangement/redis.vue'
 import Kafka from '../page/serviceMangement/kafka.vue'
 import Flume from '../page/serviceMangement/flume.vue'
 import Nginx from '../page/serviceMangement/ngix.vue'
+import LoadBlance from '../page/serviceMangement/middleWare/loadBlance.vue'
+import CreateLoadBlance from '../page/serviceMangement/middleWare/createLoadBlance.vue'
+import MonitorSet from '../page/serviceMangement/middleWare/monitorSet.vue'
 import MicroServiceApply from '../page/applicationMangement/microServiceApply.vue'
-import CreateMicroServiceApply from '../page/applicationMangement/CreateMicroServiceApply.vue'
+import CreateMicroServiceApply from '../page/applicationMangement/createMicroServiceApply.vue'
 import BatchProcessApply from '../page/applicationMangement/batchProcessApply.vue'
+import CreateBatchProcessApply from '../page/applicationMangement/createBatchProcessApply.vue'
 import GeneralApply from '../page/applicationMangement/generalApply.vue'
+import CreateGeneralApply from '../page/applicationMangement/createGeneralApply.vue'
 import ApiRegister from '../page/apiMangement/apiRegister.vue'
 import ApiTest from '../page/apiMangement/apiTest.vue'
 import PoliceSecurity from '../page/solution/bigData/policeSecurity.vue'
@@ -33,6 +40,10 @@ import Log from '../page/managementAndMonitor/log.vue'
 import HelpAndSupport from '../page/helpAndSupport/helpAndSupport.vue'
 import Login from '../page/login.vue'
 import ConsolePage from  '../page/console/consolePage.vue'
+import ColonyInfo from '../page/console/colonyInfo.vue'
+import BusinessCenterInfo from '../page/console/businessCenterInfo.vue'
+import ApplicationInfo from '../page/console/applicationInfo.vue'
+import ServiceInfo from '../page/console/serviceInfo.vue'
 import Main from '../page/main.vue'
 
 Vue.use(Router)
@@ -81,6 +92,18 @@ export default new Router({
                 path:'/cloudCompute/compute/k8sContainerEnv',
                 name:'K8SContainerEnv',
                 component:K8SContainerEnv
+            },
+            //新建域
+            {
+                path:'/cloudCompute/compute/newCreate',
+                name:'newCreate',
+                component:newCreate
+            },
+            //域的详细信息
+            {
+                path:'/cloudCompute/compute/infoDetail',
+                name:'infoDetail',
+                component:infoDetail
             },
             //Messos环境
             {
@@ -168,7 +191,7 @@ export default new Router({
             },
             //创建微服务应用
             {
-                path:'/applicationMangement/CreateMicroServiceApply',
+                path:'/applicationMangement/createMicroServiceApply',
                 name:'CreateMicroServiceApply',
                 component:CreateMicroServiceApply
             },
@@ -178,13 +201,24 @@ export default new Router({
                 name:'BatchProcessApply',
                 component:BatchProcessApply
             },
+             //创建批处理应用
+            {
+                path:'/applicationMangement/createBatchProcessApply',
+                name:'CreateBatchProcessApply',
+                component:CreateBatchProcessApply
+            },
              //普通应用
             {
                 path:'/applicationMangement/generalApply',
                 name:'GeneralApply',
                 component:GeneralApply
             },
-
+            //创建普通应用
+            {
+                path:'/applicationMangement/createGeneralApply',
+                name:'CreateGeneralApply',
+                component:CreateGeneralApply
+            },
             //API注册
             {
                 path:'/apiMangement/apiRegister',
@@ -227,16 +261,58 @@ export default new Router({
                 name:'Log',
                 component:Log
             },
+          //负载均衡
+          {
+            path:'/serviceMangement/Middleware/loadBlance',
+            name:'LoadBlance',
+            component:LoadBlance
+          },
+          //创建负载均衡
+          {
+            path:'/serviceMangement/Middleware/createLoadBlance',
+            name:'CreateLoadBlance',
+            component:CreateLoadBlance
+          },
+          {
+            path:'/serviceMangement/Middleware/monitorSet',
+            name:'MonitorSet',
+            component:MonitorSet
+          },
             //入门指南
             {
                 path:'/helpAndSupport/helpAndSupport',
                 name:'helpAndSupport',
                 component:HelpAndSupport
             },
+          //控制台页面
           {
             path:'/console/consolePage',
             name:'ConsolePage',
             component:ConsolePage
+          },
+          //集群页面
+          {
+            path:'/console/colonyInfo',
+            name:'ColonyInfo',
+            component:ColonyInfo
+          },
+          //业务中心
+          {
+            path:'/console/businessCenterInfo',
+            name:'BusinessCenterInfo',
+            component:BusinessCenterInfo
+          },
+          //应用
+          {
+            path:'/console/applicationInfo',
+            name:'ApplicationInfo',
+            component:ApplicationInfo
+          },
+          //服务
+          {
+            path:'/console/serviceInfo',
+            name:'ServiceInfo',
+            component:ServiceInfo
           }
         ]
     },

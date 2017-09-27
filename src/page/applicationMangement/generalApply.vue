@@ -152,8 +152,8 @@
 export default {
   data() {
     return {
-      h1Title: "微服务应用",
-      description: "将单个的整体应用程序分割成更小的项目关联的独立的服务。一个服务通常实现一组独立的特性或功能，包含自己的业务逻辑和适配器。各个微服务之间的关联通过暴露api来实现。这些独立的微服务不需要部署在同一个虚拟机，同一个系统和同一个应用服务器中",
+      h1Title: "普通应用",
+      description: "可独立部署实现一定功能的应用，可以通过镜像方式发布，也可以通过脚本直接启动",
       modules: [{
           title: "产品优势",
           items: [{
@@ -247,7 +247,8 @@ export default {
 <style scoped>
 .content-top{
   height: 350px;
-  background: #4b5154   url('../../assets/images/applicationManagement/microServiceApply/main-bg.jpg') 85% 50%  no-repeat;
+  background:    url('../../assets/images/applicationManagement/generalApply/main-bg.jpg')  70%  20%  no-repeat;
+  background-size:100% 100%;
 }
 .content-title{
   text-align:left;

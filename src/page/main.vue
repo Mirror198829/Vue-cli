@@ -30,66 +30,82 @@
                     </li>
                   </ul>
                   <div class="sidenav sidenav1">
-                    <div class="sideContent clearfix">
-                      <p class="introInfo">
-                        <router-link :to="{name: 'PhysicaMachineEnv'}">物理机环境</router-link>
-                        <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
-                      </p>
-                      <span class="fa fa-delicious" aria-hidden="true"></span>
-                      <img class="newbox" src="../assets/new.png">
-                    </div>
-                    <div class="sideContent clearfix">
-                      <p class="introInfo">
-                         <router-link :to="{name: 'VirtualMachineEnv'}">虚拟机</router-link>
-                         <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
-                      </p>
-                      <span class="fa fa-delicious" aria-hidden="true"></span>
-                    </div>
-                    <div class="sideContent clearfix">
-                      <p class="introInfo">
-                        <router-link :to="{name: 'K8SContainerEnv'}">k8s容器环境</router-link>
-                        <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
-                      </p>
-                      <span class="fa fa-delicious" aria-hidden="true"></span>
-                    </div>
-                    <div class="sideContent clearfix">
-                      <p class="introInfo">
-                        <router-link :to="{name: 'MessosEnv'}">messo环境</router-link>
-                        <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
-                      </p>
-                      <span class="fa fa-delicious" aria-hidden="true"></span>
-                    </div>
-                    <div class="sideContent clearfix">
-                      <p class="introInfo">
-                        <router-link :to="{name: 'YarnEnv'}">YARN环境</router-link> <br/>
-                        <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
-                      </p>
-                      <span class="fa fa-delicious" aria-hidden="true"></span>
-                    </div>
+                  	<router-link :to="{name: 'PhysicaMachineEnv'}">
+	                    <div class="sideContent clearfix">
+	                      <p class="introInfo">
+	                        <router-link :to="{name: 'PhysicaMachineEnv'}">物理机环境</router-link>
+	                        <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
+	                      </p>
+	                      <span class="fa fa-delicious" aria-hidden="true"></span>
+	                      <img class="newbox" src="../assets/new.png">
+	                    </div>
+                    </router-link>
+                    <router-link :to="{name: 'VirtualMachineEnv'}">
+	                    <div class="sideContent clearfix">
+	                      <p class="introInfo">
+	                         <router-link :to="{name: 'VirtualMachineEnv'}">虚拟机</router-link>
+	                         <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
+	                      </p>
+	                      <span class="fa fa-ravelry" aria-hidden="true"></span>
+	                    </div>
+                    </router-link>
+                    <router-link :to="{name: 'K8SContainerEnv'}">
+	                    <div class="sideContent clearfix">
+	                      <p class="introInfo">
+	                        <router-link :to="{name: 'K8SContainerEnv'}">k8s容器环境</router-link>
+	                        <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
+	                      </p>
+	                      <span class="fa fa-superpowers" aria-hidden="true"></span>
+	                    </div>
+                    </router-link>
+                    <router-link :to="{name: 'MessosEnv'}">
+	                    <div class="sideContent clearfix">
+	                      <p class="introInfo">
+	                        <router-link :to="{name: 'MessosEnv'}">messo环境</router-link>
+	                        <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
+	                      </p>
+	                      <span class="fa fa-crosshairs" aria-hidden="true"></span>
+	                    </div>
+                    </router-link>
+                    <router-link :to="{name: 'YarnEnv'}">
+	                    <div class="sideContent clearfix">
+	                      <p class="introInfo">
+	                        <router-link :to="{name: 'YarnEnv'}">YARN环境</router-link>
+	                        <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
+	                      </p>
+	                      <span class="fa fa-cubes" aria-hidden="true"></span>
+	                    </div>
+                    </router-link>
                   </div>
                   <div class="sidenav sidenav2" style="display:none;">
-                    <div class="sideContent clearfix">
-                      <p class="introInfo">
-                        <router-link :to="{name: 'ObjectStorage'}">对象存储</router-link>
-                        <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
-                      </p>
-                      <span class="fa fa-delicious" aria-hidden="true"></span>
-                      <img class="newbox" src="../assets/new.png">
-                    </div>
-                    <div class="sideContent clearfix">
-                      <p class="introInfo">
-                        <router-link :to="{name: 'BlockStorage'}">块存储</router-link>
-                        <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
-                      </p>
-                      <span class="fa fa-delicious" aria-hidden="true"></span>
-                    </div>
-                    <div class="sideContent clearfix">
-                      <p class="introInfo">
-                        <router-link :to="{name: 'ShareStorage'}">共享存储</router-link>
-                        <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
-                      </p>
-                      <span class="fa fa-delicious" aria-hidden="true"></span>
-                    </div>
+                  	<router-link :to="{name: 'ObjectStorage'}">
+	                    <div class="sideContent clearfix">
+	                      <p class="introInfo">
+	                        <router-link :to="{name: 'ObjectStorage'}">对象存储</router-link>
+	                        <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
+	                      </p>
+	                      <span class="fa fa-fire" aria-hidden="true"></span>
+	                      <img class="newbox" src="../assets/new.png">
+	                    </div>
+                    </router-link>
+                    <router-link :to="{name: 'BlockStorage'}">
+	                    <div class="sideContent clearfix">
+	                      <p class="introInfo">
+	                        <router-link :to="{name: 'BlockStorage'}">块存储</router-link>
+	                        <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
+	                      </p>
+	                      <span class="fa fa-users" aria-hidden="true"></span>
+	                    </div>
+                    </router-link>
+                    <router-link :to="{name: 'ShareStorage'}">
+	                    <div class="sideContent clearfix">
+	                      <p class="introInfo">
+	                        <router-link :to="{name: 'ShareStorage'}">共享存储</router-link>
+	                        <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
+	                      </p>
+	                      <span class="fa fa-life-ring" aria-hidden="true"></span>
+	                    </div>
+	                </router-link>
                   </div>
                 </div>
               </div>
@@ -108,123 +124,155 @@
                       <span class="leftIcon" style="visibility:hidden;"></span>
                       <span>数据库服务</span>
                     </li>
-                    <li class="clearfix listIcon3">
-                      <span class="leftIcon" style="visibility:hidden;"></span>
-                      <span><router-link :to="{name: 'Network'}">大数据服务</router-link></span>
-                    </li>
+                    <router-link :to="{name: 'Network'}">
+	                    <li class="clearfix listIcon3">
+	                      <span class="leftIcon" style="visibility:hidden;"></span>
+	                      <span><router-link :to="{name: 'Network'}">大数据服务</router-link></span>
+	                    </li>
+                    </router-link>
                   </ul>
                   <div class="sidenav sidenav1">
-                    <div class="sideContent clearfix">
-                      <p class="introInfo">
-                        <router-link :to="{name: 'PhysicaMachineEnv'}">应用中间件</router-link>
-                        <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
-                      </p>
-                      <span class="fa fa-delicious" aria-hidden="true"></span>
-                      <img class="newbox" src="../assets/new.png">
-                    </div>
-                    <div class="sideContent clearfix">
-                      <p class="introInfo">
-                         <router-link :to="{name: 'VirtualMachineEnv'}">消息中间件</router-link>
-                         <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
-                      </p>
-                      <span class="fa fa-delicious" aria-hidden="true"></span>
-                    </div>
-                    <div class="sideContent clearfix">
-                      <p class="introInfo">
-                        <router-link :to="{name: 'K8SContainerEnv'}">负载均衡</router-link>
-                        <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
-                      </p>
-                      <span class="fa fa-delicious" aria-hidden="true"></span>
-                    </div>
-                    <div class="sideContent clearfix">
-                      <p class="introInfo">
-                        <router-link :to="{name: 'MessosEnv'}">规则引擎</router-link>
-                        <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
-                      </p>
-                      <span class="fa fa-delicious" aria-hidden="true"></span>
-                    </div>
-                    <div class="sideContent clearfix">
-                      <p class="introInfo">
-                        <router-link :to="{name: 'YarnEnv'}">流程引擎</router-link> <br/>
-                        <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
-                      </p>
-                      <span class="fa fa-delicious" aria-hidden="true"></span>
-                    </div>
-                    <div class="sideContent clearfix">
-                      <p class="introInfo">
-                        <router-link :to="{name: 'YarnEnv'}">分布式协调中心</router-link> <br/>
-                        <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
-                      </p>
-                      <span class="fa fa-delicious" aria-hidden="true"></span>
-                    </div>
+                  	<router-link :to="{name: 'PhysicaMachineEnv'}">
+	                    <div class="sideContent clearfix">
+	                      <p class="introInfo">
+	                        <router-link :to="{name: 'PhysicaMachineEnv'}">应用中间件</router-link>
+	                        <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
+	                      </p>
+	                      <span class="fa fa-map" aria-hidden="true"></span>
+	                      <img class="newbox" src="../assets/new.png">
+	                    </div>
+                    </router-link>
+                    <router-link :to="{name: 'VirtualMachineEnv'}">
+	                    <div class="sideContent clearfix">
+	                      <p class="introInfo">
+	                         <router-link :to="{name: 'VirtualMachineEnv'}">消息中间件</router-link>
+	                         <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
+	                      </p>
+	                      <span class="fa fa-paper-plane" aria-hidden="true"></span>
+	                    </div>
+                    </router-link>
+                    <router-link :to="{name: 'LoadBlance'}">
+	                    <div class="sideContent clearfix">
+	                      <p class="introInfo">
+	                        <router-link :to="{name: 'LoadBlance'}">负载均衡</router-link>
+	                        <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
+	                      </p>
+	                      <span class="fa fa-road" aria-hidden="true"></span>
+	                    </div>
+                    </router-link>
+                    <router-link :to="{name: 'MessosEnv'}">
+	                    <div class="sideContent clearfix">
+	                      <p class="introInfo">
+	                        <router-link :to="{name: 'MessosEnv'}">规则引擎</router-link>
+	                        <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
+	                      </p>
+	                      <span class="fa fa-tint" aria-hidden="true"></span>
+	                    </div>
+                    </router-link>
+                    <router-link :to="{name: 'YarnEnv'}">
+	                    <div class="sideContent clearfix">
+	                      <p class="introInfo">
+	                        <router-link :to="{name: 'YarnEnv'}">流程引擎</router-link>
+	                        <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
+	                      </p>
+	                      <span class="fa fa-chain-broken" aria-hidden="true"></span>
+	                    </div>
+                    </router-link>
+                    <router-link :to="{name: 'YarnEnv'}">
+	                    <div class="sideContent clearfix">
+	                      <p class="introInfo">
+	                        <router-link :to="{name: 'YarnEnv'}">分布式协调中心</router-link>
+	                        <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
+	                      </p>
+	                      <span class="fa fa-dashcube" aria-hidden="true"></span>
+	                    </div>
+                    </router-link>
                   </div>
                   <div class="sidenav sidenav2" style="display:none;">
-                    <div class="sideContent clearfix">
-                      <p class="introInfo">
-                        <router-link :to="{name: 'ObjectStorage'}">分布式缓存</router-link>
-                        <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
-                      </p>
-                      <span class="fa fa-delicious" aria-hidden="true"></span>
-                    </div>
-                    <div class="sideContent clearfix">
-                      <p class="introInfo">
-                        <router-link :to="{name: 'RelationDatabase'}">关系数据库</router-link>
-                        <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
-                      </p>
-                      <span class="fa fa-delicious" aria-hidden="true"></span>
-                      <img class="newbox" src="../assets/new.png">
-                    </div>
-                    <div class="sideContent clearfix">
-                      <p class="introInfo">
-                        <router-link :to="{name: 'ShareStorage'}">分布式内存库</router-link>
-                        <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
-                      </p>
-                      <span class="fa fa-delicious" aria-hidden="true"></span>
-                    </div>
-                    <div class="sideContent clearfix">
-                      <p class="introInfo">
-                        <router-link :to="{name: 'ShareStorage'}">NOSQL</router-link>
-                        <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
-                      </p>
-                      <span class="fa fa-delicious" aria-hidden="true"></span>
-                    </div>
-                    <div class="sideContent clearfix">
-                      <p class="introInfo">
-                        <router-link :to="{name: 'ShareStorage'}">时序数据库</router-link>
-                        <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
-                      </p>
-                      <span class="fa fa-delicious" aria-hidden="true"></span>
-                    </div>
+                  	<router-link :to="{name: 'ObjectStorage'}">
+	                    <div class="sideContent clearfix">
+	                      <p class="introInfo">
+	                        <router-link :to="{name: 'ObjectStorage'}">分布式缓存</router-link>
+	                        <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
+	                      </p>
+	                      <span class="fa fa-contao" aria-hidden="true"></span>
+	                    </div>
+                    </router-link>
+                    <router-link :to="{name: 'RelationDatabase'}">
+	                    <div class="sideContent clearfix">
+	                      <p class="introInfo">
+	                        <router-link :to="{name: 'RelationDatabase'}">关系数据库</router-link>
+	                        <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
+	                      </p>
+	                      <span class="fa fa-gitlab" aria-hidden="true"></span>
+	                      <img class="newbox" src="../assets/new.png">
+	                    </div>
+                    </router-link>
+                    <router-link :to="{name: 'ShareStorage'}">
+	                    <div class="sideContent clearfix">
+	                      <p class="introInfo">
+	                        <router-link :to="{name: 'ShareStorage'}">分布式内存库</router-link>
+	                        <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
+	                      </p>
+	                      <span class="fa fa-google-wallet" aria-hidden="true"></span>
+	                    </div>
+                    </router-link>
+                    <router-link :to="{name: 'ShareStorage'}">
+	                    <div class="sideContent clearfix">
+	                      <p class="introInfo">
+	                        <router-link :to="{name: 'ShareStorage'}">NOSQL</router-link>
+	                        <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
+	                      </p>
+	                      <span class="fa fa-openid" aria-hidden="true"></span>
+	                    </div>
+                    </router-link>
+                    <router-link :to="{name: 'ShareStorage'}">
+	                    <div class="sideContent clearfix">
+	                      <p class="introInfo">
+	                        <router-link :to="{name: 'ShareStorage'}">时序数据库</router-link>
+	                        <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
+	                      </p>
+	                      <span class="fa fa-rebel" aria-hidden="true"></span>
+	                    </div>
+                    </router-link>
                   </div>
                   <div class="sidenav sidenav3" style="display:none;">
-                    <div class="sideContent clearfix">
-                      <p class="introInfo">
-                        <router-link :to="{name: 'ObjectStorage'}">批处理引擎</router-link>
-                        <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
-                      </p>
-                      <span class="fa fa-delicious" aria-hidden="true"></span>
-                    </div>
-                    <div class="sideContent clearfix">
-                      <p class="introInfo">
-                        <router-link :to="{name: 'BlockStorage'}">流处理引擎</router-link>
-                        <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
-                      </p>
-                      <span class="fa fa-delicious" aria-hidden="true"></span>
-                    </div>
-                    <div class="sideContent clearfix">
-                      <p class="introInfo">
-                        <router-link :to="{name: 'ShareStorage'}">数据挖掘</router-link>
-                        <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
-                      </p>
-                      <span class="fa fa-delicious" aria-hidden="true"></span>
-                    </div>
-                    <div class="sideContent clearfix">
-                      <p class="introInfo">
-                        <router-link :to="{name: 'ShareStorage'}">机器学习</router-link>
-                        <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
-                      </p>
-                      <span class="fa fa-delicious" aria-hidden="true"></span>
-                    </div>
+                  	<router-link :to="{name: 'ObjectStorage'}">
+	                    <div class="sideContent clearfix">
+	                      <p class="introInfo">
+	                        <router-link :to="{name: 'ObjectStorage'}">批处理引擎</router-link>
+	                        <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
+	                      </p>
+	                      <span class="fa fa-viacoin" aria-hidden="true"></span>
+	                    </div>
+                    </router-link>
+                    <router-link :to="{name: 'BlockStorage'}">
+	                    <div class="sideContent clearfix">
+	                      <p class="introInfo">
+	                        <router-link :to="{name: 'BlockStorage'}">流处理引擎</router-link>
+	                        <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
+	                      </p>
+	                      <span class="fa fa-viadeo-square" aria-hidden="true"></span>
+	                    </div>
+                    </router-link>
+                    <router-link :to="{name: 'ShareStorage'}">
+	                    <div class="sideContent clearfix">
+	                      <p class="introInfo">
+	                        <router-link :to="{name: 'ShareStorage'}">数据挖掘</router-link>
+	                        <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
+	                      </p>
+	                      <span class="fa fa-steam" aria-hidden="true"></span>
+	                    </div>
+                    </router-link>
+                    <router-link :to="{name: 'ShareStorage'}">
+	                    <div class="sideContent clearfix">
+	                      <p class="introInfo">
+	                        <router-link :to="{name: 'ShareStorage'}">机器学习</router-link>
+	                        <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
+	                      </p>
+	                      <span class="fa fa-skyatlas" aria-hidden="true"></span>
+	                    </div>
+                    </router-link>
                   </div>
                 </div>
               </div>
@@ -241,12 +289,14 @@
                     <a>流程调度应用</a>
                   </li>
                   <li>
-                    <router-link :to="{name: 'BatchProcessApply'}">批处理应用</router-link>
-                    <img class="newbox" src="../assets/new.png">
+       
+                     <router-link :to="{name: 'BatchProcessApply'}">批处理应用</router-link>
+                      <img class="newbox" src="../assets/new.png">
                   </li>
                   <li>
-                  <router-link :to="{name: 'GeneralApply'}">普通应用</router-link>
-                    <img class="newbox" src="../assets/new.png">
+
+                     <router-link :to="{name: 'GeneralApply'}">普通应用</router-link>
+                      <img class="newbox" src="../assets/new.png">
                   </li>
                 </ul>
               </div>
@@ -283,28 +333,32 @@
                     </li>
                   </ul>
                   <div class="sidenav sidenav1 sidenavEx">
-                    <div class="sideContent clearfix">
-                      <p class="introInfo">
-                        <router-link :to="{name: 'PoliceSecurity'}">公安安防</router-link>
-                        <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
-                      </p>
-                      <span class="fa fa-delicious " aria-hidden="true"></span>
-                    </div>
+                  	<router-link :to="{name: 'PoliceSecurity'}">
+	                    <div class="sideContent clearfix">
+	                      <p class="introInfo">
+	                        <router-link :to="{name: 'PoliceSecurity'}">公安安防</router-link>
+	                        <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
+	                      </p>
+	                      <span class="fa fa-stack-overflow " aria-hidden="true"></span>
+	                    </div>
+                    </router-link>
                     <div class="sideContent clearfix">
                       <p class="introInfo">
                         <span>医疗</span>
                         <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
                       </p>
-                      <span class="fa fa-delicious" aria-hidden="true"></span>
+                      <span class="fa fa-steam-square" aria-hidden="true"></span>
                     </div>
-                    <div class="sideContent clearfix">
-                      <p class="introInfo">
-                        <router-link :to="{name: 'Traffic'}">交通</router-link>
-                        <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
-                      </p>
-                      <span class="fa fa-delicious" aria-hidden="true"></span>
-                      <img class="newbox" src="../assets/new.png">
-                    </div>
+                    <router-link :to="{name: 'Traffic'}">
+	                    <div class="sideContent clearfix">
+	                      <p class="introInfo">
+	                        <router-link :to="{name: 'Traffic'}">交通</router-link>
+	                        <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
+	                      </p>
+	                      <span class="fa fa-opera" aria-hidden="true"></span>
+	                      <img class="newbox" src="../assets/new.png">
+	                    </div>
+                    </router-link>
                   </div>
                   <div class="sidenav sidenav2 sidenavEx" style="display:none;">
                     <div class="sideContent clearfix">
@@ -312,14 +366,14 @@
                         <span>物联网计费</span>
                         <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
                       </p>
-                      <span class="fa fa-delicious" aria-hidden="true"></span>
+                      <span class="fa fa-modx" aria-hidden="true"></span>
                     </div>
                     <div class="sideContent clearfix">
                       <p class="introInfo">
                         <span>在线计费</span>
                         <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
                       </p>
-                      <span class="fa fa-delicious" aria-hidden="true"></span>
+                      <span class="fa fa-ioxhost" aria-hidden="true"></span>
                     </div>
                   </div>
                 </div>

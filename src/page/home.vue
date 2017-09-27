@@ -171,7 +171,6 @@
                </div>
             </div>
           </div>
-
           <!-- 镜像与资产市场 -->
           <div class="row"  style="background-color:#f7f7f7">
             <div class="content-wrap">
@@ -200,7 +199,7 @@ export default {
   name: 'app',
   data() {
     return {
-       banners:['banner1','banner2'],
+       banners:['banner3','banner1','banner2'],
        applicationManagementInfos:[
           {'iconName':'fa-cloud','title':'微服务应用','info':'提供用于解决计算密集型、海量数据处理等业务的计算服务，帮助企业快速构建高性能计算的应用'},
           {'iconName':'fa-eercast','title':'流程调度应用','info':'面向企业市场推出的SAP HANA云化解决方案和服务，提供自动化管理和SAP全生命周期管理'},
@@ -283,7 +282,7 @@ export default {
       .banner{width: 100%;height:100%;background-repeat: no-repeat;background-position: center center;background-size:100% 100%;filter: grayscale(50%);}
       .banner1{background-image:url('../assets/home/navBg1.png');background-color: #2ba5d4 }
       .banner2{background-image:url('../assets/home/navBg2.png');background-color: #2ca3d4}
-      /*.banner3{background-image:url('../assets/home/banner-3.png');background-color: #1cb9d5 }*/
+      .banner3{background-image:url('../assets/home/navBg3.png');background-color: #1cb9d5 }
       /* api管理 */
       #apiWrap{display: flex;justify-content:space-around;}
       .api-item{padding:20px 30px;border:1px solid #ddd;transition: all .3s}
