@@ -4,34 +4,27 @@
 			<div class="topCon">
 				<p class="title">容器服务-Kubernetes 解决方案</p>
 				<p class="info">提供高性能可伸缩的容器应用管理能力，简化了集群的搭建和扩容等工作，让您轻松管理容器化的应用。</p>
+          		<el-button  class="create" type="success" @click="onCreateK8SCluster">创建K8S集群</el-button>
+          		<br/>
+          		<br/>
 				<ul class="list clearfix">
 					<li class="list-li liApply">
 						<div class="listTitle">
 							<img src="../../../assets/k8s/innerImg.png" alt="" class="logo">
                         	<p class="tt">南京中心</p>
 						</div>
-						<router-link :to="{name: 'infoDetail'}"><button class="liButton">查看详情</button></router-link>
+						<div class="sub-menu"><a href="#/cloudCompute/compute/newCreate">创建域</a>
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="#/cloudCompute/compute/infoDetail">查看详情</a></div>	
 					</li>
 					<li class="list-li liApply">
 						<div class="listTitle">
 							<img src="../../../assets/k8s/innerImg.png" alt="" class="logo">
                         	<p class="tt">无锡中心</p>
 						</div>
-						<router-link :to="{name: 'infoDetail'}"><button class="liButton">查看详情</button></router-link>
-					</li>
-					<li class="list-li liApply">
-						<div class="listTitle">
-							<img src="../../../assets/k8s/innerImg.png" alt="" class="logo">
-                        	<p class="tt">...</p>
-						</div>
-						<button class="liButton">查看更多</button>
-					</li>
-					<li class="list-li liApply">
-						<div class="listTitle">
-							<img src="../../../assets/k8s/innerImg.png" alt="" class="logo">
-                        	<p class="tt">新域</p>
-						</div>
-						<router-link :to="{name: 'newCreate'}"><button class="liButton">创建</button></router-link>
+						<div class="sub-menu"><a href="#/cloudCompute/compute/newCreate">创建域</a>
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="#/cloudCompute/compute/infoDetail">查看详情</a></div>	
 					</li>
 				</ul>
 			</div>
@@ -51,8 +44,8 @@
 	        	</div>
 	        	<div class="y-span4">
 	                <div class="cell hide" >
-	                    <h1>阿里云能力整合</h1>
-	                    <p>整合专有网络VPC，提供安全、高性能的网络方案。支持阿里云NAS存储，提供持久化的数据存储支持，保证数据的高可用性。支持阿里云SLB，Ingress。支持4层7层服务路由。</p>
+	                    <h1>虎踞云能力整合</h1>
+	                    <p>整合专有网络VPC，提供安全、高性能的网络方案。支持虎踞云NAS存储，提供持久化的数据存储支持，保证数据的高可用性。支持虎踞云SLB，Ingress。支持4层7层服务路由。</p>
 	                </div>
 	                <div class="cell">
 	                    <h1>DevOps及微服务</h1>
@@ -61,8 +54,8 @@
 	        	</div>
 	        	<div class="y-span4 lastY">
 	                <div class="cell hide" >
-	                    <h1>集成阿里云镜像服务</h1>
-	                    <p>阿里云镜像服务提供了安全的私有镜像管理能力，可以利用阿里云内网上实现高性能、稳定的镜像传输。</p>
+	                    <h1>集成虎踞云镜像服务</h1>
+	                    <p>虎踞云镜像服务提供了安全的私有镜像管理能力，可以利用虎踞云内网上实现高性能、稳定的镜像传输。</p>
 	                </div>
 	                <div class="cell">
 	                    <h1>应用管理</h1>
@@ -82,6 +75,9 @@ export default {
     };
   },
   methods: {
+	  onCreateK8SCluster(){
+	  	this.$router.push({ name: 'newCreateK8SCluster'});
+	  }
     
   },
   mounted:function(){
@@ -94,13 +90,24 @@ export default {
 </script>
 
 <style scoped>
-.topCon{
-	width:1200px;
+.sub-menu{
+	background:#ffffff;
+	height:37px;
+	text-align:center;
+	vertical-align:middle;
+	font-size:13px;
+	padding-top:20px;
+}
+.sub-menu>a{
+	color:#00bed8;
+}
+.header{
+	width:100%;
 	margin:0 auto;
 	color:#fff;
 	padding-top: 58px;
 	background: url(../../../assets/k8s/k8sNav.png) no-repeat center top;
-	background-size: 1200px 289px;
+	  background-size:100% 100%;
 	/*overflow: hidden;*/
 }
 .topCon .title{
@@ -123,6 +130,7 @@ export default {
 .list {
 	width: 1220px;
     overflow: hidden;
+    margin-left:60px;
 }
 .list .list-li{
 	width: 285px;
@@ -214,5 +222,11 @@ export default {
 }
 .y-span4 .cell.hide p{
 	display: none;
+}
+.create{
+	margin-left:60px;
+}
+.tt{
+	color:blue;
 }
 </style>

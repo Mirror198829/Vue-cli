@@ -120,10 +120,10 @@ export default {
           items: [{
             imageUrl: kind1,
             type:"mysql"
-          }, {
+          }/*, {
             imageUrl: kind2,
             type:"sqlServer"
-          }, {
+          }*/, {
             imageUrl: kind3,
             type:"psg"
           }, {
@@ -211,7 +211,7 @@ export default {
      $("li[li-id!='"+curId+"']").addClass("ul-left-current-no");
      $("li[li-id='"+curId+"']").removeClass("ul-left-current-no");
      $("li[li-id!='"+curId+"']").removeClass("ul-left-current");
-  
+
     });
   }
 }
@@ -301,7 +301,7 @@ export default {
   width:25%;
   float:left;
 }
-.content-box-item-num-7-left>ul>.ul-left{ 
+.content-box-item-num-7-left>ul>.ul-left{
     padding: 20px 0 20px 56px;
     color: #333;
     font-size: 16px;
@@ -312,12 +312,12 @@ export default {
     font-weight: 400;
     cursor: pointer;
 }
-.content-box-item-num-7-left>ul>.ul-left-current{ 
+.content-box-item-num-7-left>ul>.ul-left-current{
     border-right-color: #FFF;
     border-left-color: #108cee;
     color: #108cee;
 }
-.content-box-item-num-7-left>ul>.ul-left-current-no{ 
+.content-box-item-num-7-left>ul>.ul-left-current-no{
   color: #333;
   border-left-color: #e6e6e6;
 }

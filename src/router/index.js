@@ -7,6 +7,7 @@ import PhysicaMachineEnv from '../page/cloudCompute/compute/physicalMachineEnv.v
 import VirtualMachineEnv from '../page/cloudCompute/compute/virtualMachineEnv.vue'
 import K8SContainerEnv from '../page/cloudCompute/compute/k8sContainerEnv.vue'
 import newCreate from '../page/cloudCompute/compute/newCreate.vue'
+import newCreateK8SCluster from '../page/cloudCompute/compute/newCreateK8SCluster.vue'
 import infoDetail from '../page/cloudCompute/compute/infoDetail.vue'
 import MessosEnv from '../page/cloudCompute/compute/messosEnv.vue'
 import YarnEnv from '../page/cloudCompute/compute/yarnEnv.vue'
@@ -21,8 +22,8 @@ import Redis from '../page/serviceMangement/redis.vue'
 import Kafka from '../page/serviceMangement/kafka.vue'
 import Flume from '../page/serviceMangement/flume.vue'
 import Nginx from '../page/serviceMangement/ngix.vue'
-import LoadBlance from '../page/serviceMangement/middleWare/loadBlance.vue'
-import CreateLoadBlance from '../page/serviceMangement/middleWare/createLoadBlance.vue'
+import LoadBalance from '../page/serviceMangement/middleWare/loadBalance.vue'
+import CreateLoadBalance from '../page/serviceMangement/middleWare/createLoadBalance.vue'
 import MonitorSet from '../page/serviceMangement/middleWare/monitorSet.vue'
 import MicroServiceApply from '../page/applicationMangement/microServiceApply.vue'
 import CreateMicroServiceApply from '../page/applicationMangement/createMicroServiceApply.vue'
@@ -30,6 +31,7 @@ import BatchProcessApply from '../page/applicationMangement/batchProcessApply.vu
 import CreateBatchProcessApply from '../page/applicationMangement/createBatchProcessApply.vue'
 import GeneralApply from '../page/applicationMangement/generalApply.vue'
 import CreateGeneralApply from '../page/applicationMangement/createGeneralApply.vue'
+import ProcessScheduleApply from '../page/applicationMangement/processScheduleApply.vue'
 import ApiRegister from '../page/apiMangement/apiRegister.vue'
 import ApiTest from '../page/apiMangement/apiTest.vue'
 import PoliceSecurity from '../page/solution/bigData/policeSecurity.vue'
@@ -98,6 +100,12 @@ export default new Router({
                 path:'/cloudCompute/compute/newCreate',
                 name:'newCreate',
                 component:newCreate
+            },
+            //新建K8S集群
+            {
+                path:'/cloudCompute/compute/newCreateK8SCluster',
+                name :'newCreateK8SCluster',
+                component:newCreateK8SCluster
             },
             //域的详细信息
             {
@@ -195,6 +203,12 @@ export default new Router({
                 name:'CreateMicroServiceApply',
                 component:CreateMicroServiceApply
             },
+               //流程调度应用
+            {
+                path:'/applicationMangement/processScheduleApply',
+                name:'ProcessScheduleApply',
+                component:ProcessScheduleApply
+            },
              //批处理应用
             {
                 path:'/applicationMangement/batchProcessApply',
@@ -263,15 +277,15 @@ export default new Router({
             },
           //负载均衡
           {
-            path:'/serviceMangement/Middleware/loadBlance',
-            name:'LoadBlance',
-            component:LoadBlance
+            path:'/serviceMangement/Middleware/loadBalance',
+            name:'LoadBalance',
+            component:LoadBalance
           },
           //创建负载均衡
           {
-            path:'/serviceMangement/Middleware/createLoadBlance',
-            name:'CreateLoadBlance',
-            component:CreateLoadBlance
+            path:'/serviceMangement/Middleware/createLoadBalance',
+            name:'CreateLoadBalance',
+            component:CreateLoadBalance
           },
           {
             path:'/serviceMangement/Middleware/monitorSet',

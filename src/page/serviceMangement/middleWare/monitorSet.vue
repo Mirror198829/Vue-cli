@@ -54,6 +54,65 @@
                 </el-option>
               </el-select>
             </el-form-item>
+
+            <el-form-item label="转发规则：" prop="case">
+              <el-radio class="radioRule"   v-model="mySqulForm.rule" label="1">默认规则</el-radio>
+              <el-radio class="radioRule"  v-model="mySqulForm.rule" label="2">自定义规则</el-radio>
+
+              <div v-if="mySqulForm.rule==1">
+               默认规则
+              </div>
+              <div v-else>
+                <div style="margin: 20px">
+                  <el-form-item label="域名：" prop="name" style="width: 70%">
+                    <el-input v-model="mySqulForm.spaceName"></el-input>
+                  </el-form-item>
+
+                  <el-table ref="singleTable"
+                    :data="tableData"
+                    border
+                    style="width: 70%;margin-top: 20px">
+                    <el-table-column
+                      label="rewrite"
+                      width="140">
+                      <template scope="scope">
+                        <el-input v-model="scope.row.area" placeholder="请输入内容"></el-input>
+                      </template>
+                    </el-table-column>
+                    <el-table-column
+                      label="服务"
+                      width="140">
+                      <template scope="scope">
+                        <el-input v-model="scope.row.address" placeholder="请输入内容"></el-input>
+                      </template>
+                    </el-table-column>
+                    <el-table-column
+                      label="服务端口"
+                      width="120">
+                      <template scope="scope">
+                        <el-input v-model="scope.row.status" placeholder="请输入内容"></el-input>
+
+                      </template>
+                    </el-table-column>
+                    <el-table-column label="操作">
+                      <template scope="scope">
+                        <el-button
+                          size="small"
+                          @click="handleAdd(scope.row[0])">添加</el-button>
+                        <el-button
+                          size="small"
+                          type="danger"
+                          @click="handleDelete(scope.$index, scope.row)">删除</el-button>
+                      </template>
+                    </el-table-column>
+                  </el-table>
+
+                </div>
+
+              </div>
+
+            </el-form-item>
+
             <el-form-item label="自动启动：" prop="case">
               <el-tooltip :content="'Switch value: ' + autoRun" placement="top">
                 <el-switch
@@ -149,8 +208,16 @@
 
 <script>
   export default {
+
     data() {
       return {
+        tableData: [{  date: '/home',
+          address: '10.32.234.33',
+          status:'80',
+          area:'/home'
+        }
+        ],
+        radioRule:'1',
         radio: '1',
         editions:['5.7.17','5.8.3','6.2.1','7.3.6'],
         regions:['华东','华北','华南'],
@@ -166,6 +233,7 @@
         memories:[{'label':'8g','value':'8g'},{'label':'16g','value':'16g'},{'label':'32g','value':'32g'},{'label':'48g','value':'48g'},{'label':'64g','value':'64g'}],//内存
         activeStep:1,
         mySqulForm: {
+          rule:'1',
           algro:'',
           name: '',
           databaseType: 'MySQL',
@@ -194,6 +262,19 @@
       };
     },
     methods: {
+      handleAdd(param){
+        var temp={  date: '',
+          address: '',
+          status:'',
+          area:''
+        }
+        this.tableData.push(temp)
+      },
+      handleDelete(index, row) {
+        console.log(index, row);
+        console.log(index);
+        this.tableData.splice(index,1);
+      },
       getSummaries(param) {
         const { columns, data } = param;
         const sums = [];

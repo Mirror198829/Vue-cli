@@ -130,6 +130,54 @@
        </div>
        <!--第九个结束-->
 
+          <!--第十个开始-->
+        <div v-if="module.displayType === 10">
+          <div class="black-group">
+            <div class="content-title">
+              <h2 x-model="module.title">{{module.title}}</h2>
+          </div>
+        <div class="content-box-item-num-10 clearfix">
+          <div class="content-box-item-num-10-left">
+            <ul>
+              <li v-for="(item,index) in module.items"  v-if="index === 0" class="ul-left ul-left-current" :li-id="index">{{item.title}}</li>
+              <li v-for="(item,index) in module.items"  v-if="!index == 0" class="ul-left ul-left-current-no" :li-id="index">{{item.title}}</li>
+            </ul>
+          </div>
+          <div class="content-box-item-num-10-right">
+            <div class="div-right div-right-current"  v-for="(item,index) in module.items"  :div-id="index"  v-if="index === 0" >
+              <p><br/></p>
+              <div v-for="item1 in  item.contents">{{item1}}</div>
+              <img :src="item.imageUrl">
+            </div>
+            <div class="div-right  div-right-current-no"  v-for="(item,index) in module.items"  :div-id="index" v-if="!index == 0" >
+                <div v-for="item1 in  item.contents">{{item1}}</div>
+              <img :src="item.imageUrl">
+            </div>
+          </div>
+        </div>
+      </div>
+
+       </div>
+       <!--第十个结束--->
+
+        <!--第十一个开始-->
+      <div v-if="module.displayType === 11">
+        <div class="light-group">
+            <div class="content-title">
+                <h2 x-model="module.title">{{module.title}}</h2>
+            </div>
+            <div class="content-box  content-box-bg clearfix" >
+              <div class="content-box-item-num-11 " v-for="item in module.items">
+                  <i class="fa" :class="item.classType"></i>
+                  <h4>{{item.title}}</h4>
+                
+          </div>
+            </div>
+        </div>
+       </div>
+
+       <!--第十一个结束--->
+
       </div>
      </div>
 
@@ -155,46 +203,38 @@ export default {
       h1Title: "普通应用",
       description: "可独立部署实现一定功能的应用，可以通过镜像方式发布，也可以通过脚本直接启动",
       modules: [{
-          title: "产品优势",
+          title: "特点",
           items: [{
-            imageUrl: fun1,
-            title:"微服务构建与治理",
-            contents: ["提供多语言多协议高性能微服务框架，以及丰富的治理能力。","帮助用户快速构建基于微服务架构的分布式应用。"]
+            classType: 'fa-cog',
+            title:"分布式"
           }, {
-            imageUrl: fun2,
-            title:"应用调度编排",
-            contents: ["提供大规模应用调度管理能力，提升资源的整体利用率，降低服务的使用成本。"]
+            classType: 'fa-balance-scale',
+            title:"高性能"
           }, {
-            imageUrl: fun3,
-            title:"调用链分析",
-            contents: ["监控微服务之间的调用性能，帮助用户快速定位应用的故障所在和性能瓶颈。"]
+            classType: 'fa-handshake-o',
+            title:"高可用"
           }, {
-            imageUrl: fun4,
-            title:"中间件服务",
-            contents: ["提供中间件服务和服务接入能力，支撑新业务和存量业务上云。"]
+            classType: 'fa-hashtag',
+            title:"可弹性扩展"
+          }, {
+            classType: 'fa-life-bouy',
+            title:"易维护"
+          }, {
+            classType: 'fa-plug',
+            title:"智能化"
           }],
-          displayType: 9
+          displayType: 11
         },
-        {
-          title: "应用场景",
+       {
+          title: "要求",
           items: [{
-            imageUrl: fun1,
-            title:"移动云",
-            content: "打通开发与运维流程，用DevOps流水线快速构建应用，自动化部署，让业务敏捷灵活的面对市场快速变化下的挑战。"
+            title:"服务要求",
+            contents: ['①提供业务服务能力的接入和接出，实现业务服务能力的分布式部署，实现对业务服务的可见、可管、可控','②实现服务消费者和服务提供者的解耦，与弹性计算平台配合支持服务提供者的按需弹性水平扩展']
           }, {
-            imageUrl: fun2,
-            title:"政务云",
-            content: "私有云+公有云解决方案，应对政务数据量大、分布散，查询难等复杂环境，打通管理层与业务系统，安全、便捷的实现数字化的管理和运营。。"
-          }, {
-            imageUrl: fun3,
-            title:"物联网",
-            content: "提供标准化，多语言的解决方案，依托多年的软硬件技术积累，实现物与网的极速高性能的互通。"
-          }, {
-            imageUrl: fun4,
-            title:"企业应用",
-            content: "通过微服务等开源框架及中间件，改进应用架构设计，提高开发运维效率。"
+            title:"技术要求",
+            contents: ['①支持多协议的接入接出','②支持精细化的流量控制策略，保证服务的稳定性','③支持故障隔离和异常处理等多种容错手段','④具备包含负载均衡在内的智能路由能力，充分利用系统资源，达到系统效能最大化。支持配置多种负载策略，包括但不限于随机，顺序方式；支持故障隐患自动降级和熔断机制']
           }],
-          displayType: 8
+          displayType: 10
         },
         {
           title:"使用指南",
@@ -240,6 +280,24 @@ export default {
      $("li[li-id!='"+curId+"']").removeClass("ul-left-current");
 
     });
+
+   $(".content-box-item-num-10-left ul li").mouseover(function(){
+      $(".content-box-item-num-10-left ul li").css({"color":"#333","background-color":"#fff"});
+      $(this).css({"color":"#fff","background-color":"#2883D6"});
+    });
+    $(".content-box-item-num-10-left ul .ul-left").mouseover(function(){
+    var curId = $(this).attr("li-id");
+    $("div[div-id='"+curId+"']").addClass("div-right-current");
+     $("div[div-id!='"+curId+"']").addClass("div-right-current-no");
+     $("div[div-id='"+curId+"']").removeClass("div-right-current-no");
+     $("div[div-id!='"+curId+"']").removeClass("div-right-current");
+      $("li[li-id='"+curId+"']").addClass("ul-left-current");
+     $("li[li-id!='"+curId+"']").addClass("ul-left-current-no");
+     $("li[li-id='"+curId+"']").removeClass("ul-left-current-no");
+     $("li[li-id!='"+curId+"']").removeClass("ul-left-current");
+
+    });
+
   }
 }
 </script>
@@ -433,6 +491,69 @@ export default {
     line-height: 22px;
     text-align: left;
 }
+
+.content-box-item-num-10{
+  text-align: left;
+  background-color:#ffffff;
+  height:400px;
+  margin:5px;
+}
+.content-box-item-num-10-left{
+  width:25%;
+  float:left;
+}
+.content-box-item-num-10-left>ul>.ul-left{
+    padding: 20px 0 20px 56px;
+    color: #333;
+    font-size: 16px;
+    border: 1px solid #e6e6e6;
+    margin-top: -1px;
+    margin-bottom: -1px;
+    margin-left: -1px;
+    font-weight: 400;
+    cursor: pointer;
+}
+.content-box-item-num-10-left>ul>.ul-left-current{
+    border-right-color: #FFF;
+    border-left-color: #108cee;
+    color: #108cee;
+}
+.content-box-item-num-10-left>ul>.ul-left-current-no{
+  color: #333;
+  border-left-color: #e6e6e6;
+}
+.content-box-item-num-10-right{
+  width:70%;
+  float:left;
+  padding-left:25px;
+}
+.content-box-item-num-10-right p{
+  align:left;
+}
+.content-box-item-num-10-right img{
+  align:center;
+}
+.content-box-item-num-10-right>.div-right-current-no{
+  display:none;
+}
+.content-box-item-num-10-right>.div-right-current{
+  display:true;
+}
+.content-box-item-num-10-right>.div-right>div{
+  margin:30px;
+}
+
+.content-box-item-num-11{
+  float:left;
+  border: 1px solid #eceff5;
+  background: #eceff5;
+  padding: 20px  0px;
+  width:12%;
+  margin:2%;
+}
+.content-box-item-num-11>h4{
+  padding-top:15px;
+}
 .content-box-item-num-4{
   text-align: left;
   vertical-align: top;
@@ -562,5 +683,5 @@ export default {
 .align-left{
   text-align: left;
 }
-
+.fa{font-size: 50px;color:#688fd9;}
 </style>

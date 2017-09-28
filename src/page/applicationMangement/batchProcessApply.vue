@@ -131,7 +131,7 @@
 
        <!--第十个开始-->
         <div v-if="module.displayType === 10">
-          <div class="dark-group">
+          <div class="black-group">
             <div class="content-title">
               <h2 x-model="module.title">{{module.title}}</h2>
           </div>
@@ -144,9 +144,7 @@
           </div>
           <div class="content-box-item-num-10-right">
             <div class="div-right div-right-current"  v-for="(item,index) in module.items"  :div-id="index"  v-if="index === 0" >
-              <p><br/></p>
               <div v-for="item1 in  item.contents">{{item1}}</div>
-                 <p><br/></p>
               <img :src="item.imageUrl">
             </div>
             <div class="div-right  div-right-current-no"  v-for="(item,index) in module.items"  :div-id="index" v-if="!index == 0" >
@@ -209,7 +207,7 @@ export default {
           title: "要求",
           items: [{
             title:"服务要求",
-            contents: ['①应用程序将读写请求全部发送给代理实例，代理实例自动分离读请求并均摊到只读实例上，剩余的读写请求发给主实例的主节点，从而扩展整体读能力','②主实例备节点、只读实例和主节点之间通过异步复制进行主从同步。']
+            contents: ['①提供批处理任务的获取和调度，实现批量任务的分布式部署和协同','②实现服务消费者和服务提供者的解耦，与弹性计算平台配合支持服务提供者的按需弹性水平扩展']
           }, {
             title:"技术要求",
             contents: ['①支持丰富的数据源类型，包括文件系统（FTP服务器、SFTP服务器、集群节点、HDFS）、传统数据库/数据仓库（Oracle、MySQL、DB2、Teradata等）、MPP数据库（Vertica、GreenPlum、Gbase等）、大数据仓库（Hive、Hbase）、非结构化数据库（MongoDB等）','②支持多节点并发处理，以提高数据处理效率','③支持多线程并发处理，以提高数据处理效率','④支持多种数据库连接方式，包括专用数据库驱动接口、JDBC、ODBC接口等','⑤提供错误数据处理机制，能将发生错误的数据记录到相应的错误表中和错误数据重处理']

@@ -1,11 +1,25 @@
 <template>
    <div>
    	<div class="topNav">
-      <div class="nav clearfix">
-        <div class="logoName">
+   	  <div class="navbar clearfix">
+   	  	<div class="logoName clearfix">
           <img src="../assets/cloud.png" height="45" width="74" title="PAAS云平台" alt="PAAS云平台">
           <span>虎踞云</span>
         </div>
+        <div class="login">
+          <ul class="clearfix">
+          	<li>
+          		<input class="search" type="text">
+          		<i class="fa fa-search" aria-hidden="true"></i>
+          	</li>
+          	<router-link :to="{name: 'Login'}">
+          		<li>登录</li>
+          	</router-link>
+          	<li>注册</li>
+          </ul>
+        </div>
+   	  </div>
+      <div class="nav clearfix">
         <div class="menu">
           <ul class="productList clearfix">
             <li class="subList">
@@ -37,7 +51,7 @@
 	                        <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
 	                      </p>
 	                      <span class="fa fa-delicious" aria-hidden="true"></span>
-	                      <img class="newbox" src="../assets/new.png">
+
 	                    </div>
                     </router-link>
                     <router-link :to="{name: 'VirtualMachineEnv'}">
@@ -56,6 +70,7 @@
 	                        <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
 	                      </p>
 	                      <span class="fa fa-superpowers" aria-hidden="true"></span>
+	                       <img class="newbox" src="../assets/new.png">
 	                    </div>
                     </router-link>
                     <router-link :to="{name: 'MessosEnv'}">
@@ -139,7 +154,7 @@
 	                        <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
 	                      </p>
 	                      <span class="fa fa-map" aria-hidden="true"></span>
-	                      <img class="newbox" src="../assets/new.png">
+
 	                    </div>
                     </router-link>
                     <router-link :to="{name: 'VirtualMachineEnv'}">
@@ -151,13 +166,14 @@
 	                      <span class="fa fa-paper-plane" aria-hidden="true"></span>
 	                    </div>
                     </router-link>
-                    <router-link :to="{name: 'LoadBlance'}">
+                    <router-link :to="{name: 'LoadBalance'}">
 	                    <div class="sideContent clearfix">
 	                      <p class="introInfo">
-	                        <router-link :to="{name: 'LoadBlance'}">负载均衡</router-link>
+	                        <router-link :to="{name: 'LoadBalance'}">负载均衡</router-link>
 	                        <span class="infoDetail">是一种随时获取、弹性可扩展的计算服务</span>
 	                      </p>
 	                      <span class="fa fa-road" aria-hidden="true"></span>
+	                        <img class="newbox" src="../assets/new.png">
 	                    </div>
                     </router-link>
                     <router-link :to="{name: 'MessosEnv'}">
@@ -281,23 +297,30 @@
               <a>应用管理</a>
               <div class="subMenu1 menuApply" style="display:none;">
                 <ul>
-                  <li>
-                    <router-link :to="{name: 'MicroServiceApply'}">微服务应用</router-link>
-                    <img class="newbox" src="../assets/new.png">
-                  </li>
-                  <li>
-                    <a>流程调度应用</a>
-                  </li>
-                  <li>
-       
-                     <router-link :to="{name: 'BatchProcessApply'}">批处理应用</router-link>
-                      <img class="newbox" src="../assets/new.png">
-                  </li>
-                  <li>
+                	<router-link :to="{name: 'MicroServiceApply'}">
+	                  <li>
+	                    <router-link :to="{name: 'MicroServiceApply'}">微服务应用</router-link>
 
-                     <router-link :to="{name: 'GeneralApply'}">普通应用</router-link>
-                      <img class="newbox" src="../assets/new.png">
-                  </li>
+	                  </li>
+                  	</router-link>
+                  	<router-link :to="{name: 'ProcessScheduleApply'}">
+	                  <li>
+	                	<router-link :to="{name: 'ProcessScheduleApply'}">流程调度应用</router-link>
+
+	                  </li>
+                  	</router-link>
+                  	<router-link :to="{name: 'BatchProcessApply'}">
+	                  <li>
+	                     <router-link :to="{name: 'BatchProcessApply'}">批处理应用</router-link>
+	                     <img class="newbox" src="../assets/new.png">
+	                  </li>
+                  	</router-link>
+                  	<router-link :to="{name: 'GeneralApply'}">
+	                  <li>
+	                     <router-link :to="{name: 'GeneralApply'}">普通应用</router-link>
+
+	                  </li>
+                  	</router-link>
                 </ul>
               </div>
             </li>
@@ -305,16 +328,22 @@
               <a>API管理</a>
               <div class="subMenu1 menuApi" style="display:none;">
                 <ul>
-                  <li>
-                    <router-link :to="{name: 'ApiRegister'}">API注册</router-link>
-                  </li>
-                  <li>
-                    <router-link :to="{name: 'ApiTest'}">API测试</router-link>
-                    <img class="newbox" src="../assets/new.png">
-                  </li>
-                  <li>
-                    <a>API</a>
-                  </li>
+                	<router-link :to="{name: 'ApiRegister'}">
+	                  <li>
+	                    <router-link :to="{name: 'ApiRegister'}">API注册</router-link>
+	                  </li>
+                  	</router-link>
+                  	<router-link :to="{name: 'ApiRegister'}">
+	                  <li>
+	                    <router-link :to="{name: 'ApiTest'}">API测试</router-link>
+	                    <img class="newbox" src="../assets/new.png">
+	                  </li>
+                  	</router-link>
+                  	<router-link :to="{name: 'ApiRegister'}">
+	                  <li>
+	                    <a>API</a>
+	                  </li>
+                  	</router-link>
                 </ul>
               </div>
             </li>
@@ -383,13 +412,17 @@
               <a>镜像与资产市场</a>
               <div class="subMenu1 menuMirror" style="display:none;">
                 <ul>
-                  <li>
-                    <router-link :to="{name: 'BaseMirror'}">基础镜像</router-link>
-                    <img class="newbox" src="../assets/new.png">
-                  </li>
-                  <li>
-                    <router-link :to="{name: 'DatabaseMirror'}">数据库镜像</router-link>
-                  </li>
+                	<router-link :to="{name: 'BaseMirror'}">
+	                  <li>
+	                    <router-link :to="{name: 'BaseMirror'}">基础镜像</router-link>
+	                    <img class="newbox" src="../assets/new.png">
+	                  </li>
+                  	</router-link>
+                  	<router-link :to="{name: 'DatabaseMirror'}">
+	                  <li>
+	                    <router-link :to="{name: 'DatabaseMirror'}">数据库镜像</router-link>
+	                  </li>
+                  	</router-link>
                   <li>
                     <a>缓存镜像</a>
                   </li>
@@ -400,10 +433,12 @@
               <a>管理与监控</a>
               <div class="subMenu1 menuManage" style="display:none;">
                 <ul>
-                  <li>
-                    <router-link :to="{name: 'Log'}">日志</router-link>
-                    <img class="newbox" src="../assets/new.png">
-                  </li>
+                	<router-link :to="{name: 'Log'}">
+	                  <li>
+	                    <router-link :to="{name: 'Log'}">日志</router-link>
+	                    <img class="newbox" src="../assets/new.png">
+	                  </li>
+	                </router-link>
                   <li>
                     <a>配置</a>
                   </li>
@@ -432,21 +467,21 @@
                   <li>
                     <a>常见问题</a>
                   </li>
-                  <li>
-                    <router-link :to="{name: 'helpAndSupport'}">技术支持</router-link>
-                    <img class="newbox" src="../assets/new.png">
-                  </li>
+                  <router-link :to="{name: 'helpAndSupport'}">
+	                  <li>
+	                    <router-link :to="{name: 'helpAndSupport'}">技术支持</router-link>
+	                    <img class="newbox" src="../assets/new.png">
+	                  </li>
+                  </router-link>
                 </ul>
               </div>
             </li>
           	<li class="subList">
               <router-link :to="{name: 'ConsolePage'}">控制台</router-link>
-            </li>
+           </li>
           </ul>
         </div>
-        <div class="login">
-          <router-link :to="{name: 'Login'}">登录</router-link>
-        </div>
+
       </div>
     </div>
     <router-view style="min-height:650px"></router-view>
@@ -528,12 +563,18 @@ a,span{
   top:0;*/
   width:100%;
   min-width: 1200px;
-  height:66px;
+  /*height:66px;*/
   background-color: #333333;
   /*background-color: #FEFEFE;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
   background-image: linear-gradient(to bottom, #FEFEFE, #F4F6F8);
   background-repeat: repeat;*/
+}
+.topNav .navbar{
+	width:1230px;
+  	min-width:1230px;
+	margin:0 auto;
+  	color:#fff;
 }
 .topNav .nav{
   width:1230px;
@@ -541,30 +582,47 @@ a,span{
   margin:0 auto;
   color:#fff;
 }
-.nav .logoName img{
+.navbar .logoName{
+  float:left;
+  width:200px;
+}
+.navbar .logoName img{
   display:block;
   float:left;
-  margin-top:10px;
+  margin-top:5px;
   width:45px;
 }
-.nav .logoName span{
+.navbar .logoName span{
   display:block;
   float:left;
-  margin-top: 20px;
+  margin-top: 13px;
   margin-left: 7px;
   font-size: 20px;
   font-weight:bolder;
 }
-.nav .logoName,.nav .menu{
-  float:left;
+.login{
+  float:right;
+}
+.search{
+	width: 120px;
+	border: none;
+	height: 20px;
+	padding-left: 5px;
+}
+.login ul li{
+	float: left;
+	list-style: none;
+	padding: 15px 18px 15px 18px;
+	font-size:14px;
 }
 .nav .menu{
+  float:right;
   margin-left:50px;
 }
 .menu .productList li{
   float:left;
   list-style:none;
-  padding: 24px 18px 20px 18px;
+  padding: 5px 18px 20px 18px;
 }
 .menu .productList>li a{
   cursor: pointer;
@@ -575,7 +633,7 @@ a,span{
 .productList li.subList .subMenu2{
   position:absolute;
   width:903px;
-  top:66px;
+  top:46px;
   background:rgba(0,0,0,0.6);
   /*background:rgba(76,158,217,1);*/
   left:0;
@@ -723,14 +781,6 @@ img.newbox{
 .sidenavEx .sideContent{
   width:90%;
   float:none;
-}
-.login{
-  float:left;
-}
-.login a{
-  display: block;
-  margin-top:24px;
-  margin-left:20px;
 }
 .subMenu2 li .firstIcon{
 	visibility: visible;

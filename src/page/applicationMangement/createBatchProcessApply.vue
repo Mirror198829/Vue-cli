@@ -3,20 +3,23 @@
      <div class="createMain">
     <div>
       <el-steps  :active="activeStep"  :center="true" class="step">
-        <el-step title="创建批处理应用"></el-step>
-        <el-step title="创建成功"></el-step>
-        <el-step title="等待审批"></el-step>
+        <el-step title="基本信息配置"></el-step>
+        <el-step title="应用内容配置"></el-step>
+        <el-step title="服务配置"></el-step>
+         <el-step title="应用配置"></el-step>
+          <el-step title="监控"></el-step>
+           <el-step title="日志配置"></el-step>
+          <el-step title="完成"></el-step>
     </el-steps>
     </div>
 
   
 
-    <div class="main-wrap" v-if="activeStep ==1 ">
-
+    
 
     <el-form ref="form" :model="createForm" label-width="130px"  class="form" >
-
-
+    <!--第一部分开始--->
+      <div class="main-wrap" v-if="activeStep ==1 ">
       <div class="form-article">
       <h3 class="form-article-title">基本信息</h3>
 
@@ -79,8 +82,13 @@
         <el-input type="textarea" v-model="createForm.desc"  placeholder="请输入应用描述"></el-input>
       </el-form-item>
         </div>
+      </div>
+ <!--第一部分结束--->
+  <!--第二部分开始--->
+  <div class="main-wrap" v-if="activeStep ==2 ">
+      <div class="main-wrap" >
         
-        <div  v-if="createForm.isImageDisplay">
+    <div  v-if="createForm.isImageDisplay">
           <div class="form-article">
     <h3 class="form-article-title">镜像信息</h3>
      <el-form-item label="实例数">
@@ -109,7 +117,13 @@
         </el-table>
       </el-dialog>
 
-       <el-form-item label="资源配置">
+     
+     </el-form-item>
+ </div>
+
+  <div class="form-article">
+        <h3 class="form-article-title">资源配置</h3>
+            <el-form-item label="资源选择">
           <div class="resource-select validate-area">
             <div class="resource-box" v-for="resource in createForm.resourceArr" 
             @click="selectResource(resource)" :class="{'active': !createForm.currentImage.isCustomResource &&  createForm.currentImage.resource.cpu == resource.cpu && createForm.currentImage.resource.memory == resource.memory}">
@@ -129,8 +143,66 @@
             </div>
         </div>
        </el-form-item>
-     </el-form-item>
-     </div>
+      </div>
+
+      <div class="form-article">
+        <h3 class="form-article-title">启动配置</h3>
+          <el-form-item label="启动类">
+            <el-input v-model="createForm.imageStartClass"></el-input>
+          </el-form-item>
+           <el-form-item label="启动参数">
+            <el-input v-model="createForm.imageStartParam"></el-input>
+          </el-form-item>
+      </div>
+
+     <div class="form-article">
+        <h3 class="form-article-title">动态扩容</h3>
+          <el-form-item label="资源检查时间间隔">
+          <el-input-number v-model="createForm.resourceCheckTime"  :min="1" :max="100"></el-input-number>  秒
+          </el-form-item>
+           <el-form-item label="cpu扩容阈值">
+             <el-slider
+                  v-model="createForm.cpuPercent"
+                  :step="10"
+                  show-stops
+                  show-input
+                  :max="100"
+                  :min="1"
+                  :format-tooltip="formatTooltip">
+                </el-slider>
+          </el-form-item>
+            <el-form-item label="memory扩容阈值">
+                  <el-slider
+                  v-model="createForm.memoryPercent"
+                  :step="10"
+                  show-stops
+                  show-input
+                  :max="100"
+                  :min="1"
+                  :format-tooltip="formatTooltip">
+                </el-slider>
+          </el-form-item>
+      </div>
+
+          <div class="form-article">
+        <h3 class="form-article-title">环境配置</h3>
+            <el-form-item label="环境列表">
+         <el-table :data="createForm.evnData" stripe style="width: 100%" >
+               <el-table-column prop="key"  label="KEY" width="180"> </el-table-column>
+               <el-table-column prop="value" label="VALUE" > </el-table-column>
+                <el-table-column  label="操作">
+                  <template scope="scope">
+                    <el-button
+                      size="small"
+                      type="danger"
+                      @click="deleteEvn(scope.$index, scope.row)">删除</el-button>
+                  </template>
+                </el-table-column>
+         </el-table>
+         </el-form-item>
+      </div>
+
+    
     </div>
 
     <div v-if="createForm.isCommonDisplay">
@@ -148,7 +220,13 @@
   
     </div>
     </div>
-<div class="form-article">
+    </div>
+
+  </div>
+   <!--第二部分结束--->
+     <!--第三部分开始--->
+      <div class="main-wrap" v-if="activeStep ==3 ">
+      <div class="form-article">
       <h3 class="form-article-title">服务信息</h3>
     <el-form-item label="是否开启服务">
         <el-switch v-model="createForm.isServiceOpen" on-color="#13ce66" off-color="#bfcbd9" @change="changeServiceOpen"> </el-switch>   &nbsp;&nbsp;&nbsp;
@@ -196,15 +274,87 @@
         </el-form-item>
     </div>
     </div>
-    <div class="form-article">
-      <h3 class="form-article-title">日志配置</h3>
-      <el-form-item label="节点">
-          <el-select v-model="createForm.logNode" multiple   placeholder="请选择日志输出节点">
-            <el-option label="vdkapp51" value="51"></el-option>
-            <el-option label="vdkapp52" value="52"></el-option>
-            <el-option label="vdkapp53" value="53"></el-option>
+
+  </div>
+   <!--第三部分结束--->
+     <!--第四部分开始:配置文件--->
+      <div class="main-wrap" v-if="activeStep ==4 ">
+      <div class="form-article">
+      <h3 class="form-article-title">应用配置</h3>
+      <el-form-item label="配置列表">
+          <el-table :data="createForm.configs" stripe style="width: 100%">
+             <el-table-column prop="type"  label="类型" width="120">
+              </el-table-column>
+                <el-table-column prop="evn" label="环境"  width="120"> 
+             </el-table-column>
+                 <el-table-column prop="version" label="版本"  width="120"> 
+             </el-table-column>
+             <el-table-column prop="name" label="名称" width="180" > 
+             </el-table-column>
+               <el-table-column prop="value"  label="值" width="200"> 
+               </el-table-column>
+            <el-table-column  label="操作">
+                <template scope="scope">
+                  <el-button
+                    size="small"
+                    type="danger"
+                    @click="deleteConfig(scope.$index, scope.row)">删除</el-button>
+                </template>
+              </el-table-column>
+       </el-table>
+      </el-form-item>
+
+    </div>
+  </div>
+
+    <div class="main-wrap" v-if="activeStep ==4 ">
+      <div class="form-article">
+      <h3 class="form-article-title">增加配置</h3>
+        <el-form-item label="类型">
+          <el-select v-model="createForm.configType"    placeholder="请选择配置类型">
+                <el-option label="配置项" value="configItem"></el-option>
+                <el-option label="配置文件" value="configFile"></el-option>
            </el-select>
       </el-form-item>
+          <el-form-item label="环境">
+          <el-select v-model="createForm.configEvn"    placeholder="请选择环境类型">
+                <el-option label="开发环境" value="dev"></el-option>
+                <el-option label="测试环境" value="test"></el-option>
+           </el-select>
+      </el-form-item>
+         <el-form-item label="版本">
+           <el-input  v-model="createForm.configVersion"  placeholder="请输版本,比如:1_0_0"></el-input>
+      </el-form-item>
+        <el-form-item label="名称">
+           <el-input  v-model="createForm.configName"  placeholder="请输配置项或配置文件名称"></el-input>
+      </el-form-item>
+      <el-form-item label="值">
+           <el-input  type="textarea" v-model="createForm.configValue"  placeholder="请输配置值"></el-input>
+      </el-form-item>
+     <el-form-item >
+             <el-button type="primary"  @click="addConfig">保存</el-button>
+          </el-form-item>
+
+    </div>
+  </div>
+
+   <!--第四部分结束--->
+     <!--第五部分开始：监控--->
+      <div class="main-wrap" v-if="activeStep ==5 ">
+ <div class="form-article">
+      <h3 class="form-article-title">监控信息</h3>
+    <el-form-item label="是否开启监控">
+        <el-switch v-model="createForm.isMonitorOpen" on-color="#13ce66" off-color="#bfcbd9" @change="changeMonitorOpen"> </el-switch>   
+      </el-form-item>
+    
+    </div>
+
+  </div>
+   <!--第五部分结束--->
+     <!--第六部分开始:日志--->
+      <div class="main-wrap" v-if="activeStep ==6 ">
+          <div class="form-article">
+      <h3 class="form-article-title">日志配置</h3>
       <el-form-item label="路径">
              <el-input  v-model="createForm.logPath"  placeholder="请输入日志输出路径,比如:/var/log/app1"/>
       </el-form-item>
@@ -217,27 +367,34 @@
                 <el-option label="kafka" value="kafka"></el-option>
            </el-select>
       </el-form-item>
-      </div>
-
-    <div class="form-article">
-
-    <el-form-item>
-        <el-button type="primary" @click="activeStep++">立即创建</el-button>
-        <el-button>取消</el-button>
-      </el-form-item>
-      </div>
-    </el-form>   
-
-</div>
-<div v-if="activeStep ==2 ">
-  <div class="correctTip">
+    </div>
+  </div>
+   <!--第六部分结束--->
+    <!--第七部分开始--->
+      <div  v-show="activeStep == 7">
+  <div class="main-wrap form-article" >
+        <div class="correctTip">
           <i class="fa fa-check-circle"></i>
           <span id="successTip">恭喜您，已成功创建！</span><br/>
           <span id="tip">请耐心等待审批，详情可见</span>
           <a href="javascript:void(0)" id="link-order">我的工单</a>！
         </div>
+      </div>
+      </div>
+    <!--第七部分结束--->
+    <!--操作按钮开始-->
+       <div class="form-article">
+        <el-form-item>
+          <el-button type="primary" v-if="activeStep !=1 && activeStep != 7" @click="activeStep--">上一步</el-button>
+            <el-button type="primary" v-if="activeStep < 6" @click="activeStep++">下一步</el-button>
+             <el-button type="primary" v-if="activeStep == 6" @click="activeStep++">创建</el-button>
+              <el-button type="primary" v-if="activeStep == 7" @click="gotoBatchProcessApply">返回</el-button>
+            <el-button  @click="gotoBatchProcessApply">取消</el-button>
+          </el-form-item>
+      </div>
+    <!--操作按钮结束--->
+    </el-form>   
 
-</div>
   </div>
     </div>
 </template>
@@ -283,6 +440,7 @@ export default {
           },
           isCustomResource:!0,
           isServiceOpen:true,
+          isMonitorOpen:true,
           kind: '',
           desc: '',
           nums:1,
@@ -342,6 +500,36 @@ export default {
             memory:''
           }
         },
+        configs:[
+         {type:"配置文件",
+         evn:"测试环境",
+         version:"1.0.0",
+         name:"dubbo.properties",
+         value:"city:NJ"},
+         {type:"配置项",
+         evn:"开发环境",
+         version:"1.0.0",
+         name:"flag",
+         value:"true"}
+        ],
+        resourceCheckTime:30,
+        memoryPercent:80,
+        cpuPercent:70,
+        configType:"configItem",
+        configEvn :"test",
+        configVersion:"",
+        configName:"",
+        configValue:"",
+        evnData:[
+          {
+          key:'JAVA_HOME',
+          value:'/usr/local/java'
+          },
+          {
+          key:'PATH',
+          value:'/usr/local/java/bin'
+          }
+        ],
           servicePorts : [
             {
               portName:'',
@@ -377,8 +565,42 @@ export default {
     };
   },
   methods: {
+    formatTooltip(val){
+      return val+" %"
+    },
+      addConfig(){
+        this.createForm.configs.push({
+          type:this.createForm.configType,
+         evn:this.createForm.configEvn,
+         version:this.createForm.configVersion,
+         name:this.createForm.configName,
+         value:this.createForm.configValue
+        });
+        this.createForm.configType = "configItem";
+         this.createForm.configEvn = "dev";
+          this.createForm.configVersion = "";
+           this.createForm.configName = "";
+            this.createForm.configValue = "";
+      },
+      deleteConfig(index,row){
+        this.createForm.configs.splice(index,1);
+      },
+      addEvn(){
+        this.createForm.configData.push({
+          key:this.createForm.key,
+         value:this.createForm.value
+        });
+        this.createForm.key = "";
+         this.createForm.value = "";
+      },
+      deleteEvn(index,row){
+        this.createForm.configData.splice(index,1);
+      },
       onSubmit() {
         console.log('submit!');
+      },
+      gotoBatchProcessApply(){
+        this.$router.push({ name: 'BatchProcessApply'});
       },
       handleCreateType(type){
         if("fromImage" == type){
@@ -390,11 +612,6 @@ export default {
         }
       },
       clickImageRow(row, event, column){
-      console.log(this.createForm.currentImage.resource);
-      console.log(row.resource);
-      console.log(this.createForm.currentImage.customResource);
-      console.log(row.customResource);
-      console.log(row);
         this.createForm.currentImage.imageName = row.imageName;
         this.createForm.currentImage.imageTag = row.imageTag;
         this.createForm.currentImage.resource.cpu = row.resource.cpu;
@@ -449,6 +666,9 @@ export default {
         }else{
 
         }
+      },
+      changeMonitorOpen(){
+
       },
       addPort(){
           if(this.createForm.servicePorts && this.createForm.servicePorts.length>0){
@@ -507,7 +727,7 @@ export default {
 <style scoped>
 .createMainWrap{background-color: #f4f5f6;padding-bottom:50px;}
 .createMain{width:1200px;margin:0 auto ;}
-.step{width:700px;padding:20px 0 40px;margin: 0 auto}
+.step{width:900px;padding:20px 0 40px;margin: 0 auto}
 .content{
   align:center;
   margin:70px;

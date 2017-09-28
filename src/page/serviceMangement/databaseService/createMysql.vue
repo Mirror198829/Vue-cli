@@ -18,7 +18,7 @@
 			</div>
 			<div class="sqlmain-wrap"  v-show="activeStep == 1">
 				<el-form label-position="left" :model="mySqulForm" :rules="rules" ref="mySqulForm" label-width="150px" class="demo-mySqulForm">
-				  <div class="form-article">
+				 <!-- <div class="form-article">
 				  		<h3 class="form-article-title">网络</h3>
 					  	<el-form-item label="当前区域：" required>
 			  				<el-radio-group v-model="mySqulForm.region" @change="changeEdition()">
@@ -34,23 +34,28 @@
 					   <el-form-item label="安全组：" required>
 			  				<el-input v-model="mySqulForm.securityGroup" placeholder="请输入安全组"></el-input>
 					   </el-form-item>
-				  </div>
+				  </div>-->
 				  <div class="form-article">
 				  		  <h3 class="form-article-title">实例规格</h3>
 						  <el-form-item label="实例名称：" prop="name">
 						    <el-input v-model="mySqulForm.name"></el-input>
 						  </el-form-item>
+            <el-form-item label="当前区域：" required>
+              <el-radio-group v-model="mySqulForm.region" @change="changeEdition()">
+                <el-radio-button v-for="(item,key) in regions" :label="item" :key="key"></el-radio-button>
+              </el-radio-group>
+            </el-form-item>
 						  <el-form-item label="数据库引擎：" required>
 			  				<el-radio-group v-model="mySqulForm.databaseType" @change="changeEdition()">
 							    <el-radio-button label="MySQL"></el-radio-button>
-							    <el-radio-button label="SQL Server"></el-radio-button>
+							    <!--<el-radio-button label="SQL Server"></el-radio-button>-->
 						   </el-radio-group>
 						  </el-form-item>
 						  <el-form-item label="版本：" required>
 						    <el-radio-group v-model="mySqulForm.edition">
 						    	<el-radio-button v-for="(item,key) in editions" :label="item" :key="key"></el-radio-button>
 						   </el-radio-group>
-						  </el-form-item>			  
+						  </el-form-item>
 						  <el-form-item label="数据库实例类：" prop="case">
 						    <el-select v-model="mySqulForm.case" placeholder="请选择">
 							    <el-option
@@ -87,13 +92,13 @@
 					    	<el-input v-model="mySqulForm.port"></el-input>
 					    </el-form-item>
 				  </div>
-				  <div class="form-article">			  
+				  <div class="form-article">
 					  <el-form-item>
 					     <el-button type="primary" @click="submitForm('mySqulForm')">立即创建</el-button>
 					     <el-button @click="resetForm('mySqulForm')">重置</el-button>
 					   </el-form-item>
 				  </div>
-				</el-form>				  
+				</el-form>
 			</div>
 			<div class="sqlmain-wrap" v-show="activeStep == 2">
 				<div class="correctTip">
@@ -103,7 +108,7 @@
 					<a href="javascript:void(0)" id="link-order">我的工单</a>！
 				</div>
 			</div>
-	   </div>  
+	   </div>
   </div>
 
 </template>
@@ -113,7 +118,7 @@ export default {
    data() {
       return {
       	editions:['5.7.17','5.8.3','6.2.1','7.3.6'],
-      	regions:['华东','华北','华南'],
+      	regions:['南京','无锡','苏州'],
       	cases:[
       		{'label':'rds.mySQL.s1.medium - 1 核','value':'1'},
       		{'label':'rds.mySQL.s3.medium - 2 核','value':'2'}
@@ -127,7 +132,7 @@ export default {
           case:"",
           memory:'',
           storageDisk:50,
-          region:'华东',
+          region:'南京',
           virtualPrivateCloud:'',
           subnet:'',
           securityGroup:'',

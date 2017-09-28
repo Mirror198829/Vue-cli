@@ -199,7 +199,7 @@ export default {
   name: 'app',
   data() {
     return {
-       banners:['banner3','banner1','banner2'],
+       banners:['banner3','banner2','banner1'],
        applicationManagementInfos:[
           {'iconName':'fa-cloud','title':'微服务应用','info':'提供用于解决计算密集型、海量数据处理等业务的计算服务，帮助企业快速构建高性能计算的应用'},
           {'iconName':'fa-eercast','title':'流程调度应用','info':'面向企业市场推出的SAP HANA云化解决方案和服务，提供自动化管理和SAP全生命周期管理'},

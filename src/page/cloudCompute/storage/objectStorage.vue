@@ -5,6 +5,7 @@
           <h1 class="col">{{h1Title}}</h1>
           <br/>
           <p class="col">{{description}}</p>
+          <br/>
         </div>
       </div>
       <ul>
