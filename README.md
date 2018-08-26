@@ -1,21 +1,5 @@
-# pass-platform
-
-> pass-platform
-
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+vue组件的引入，三个步骤
+1. 引入  
+2. 注册  
+3. 使用  
+但是用过`Vue.use()`引入的组件 没有以上操作
