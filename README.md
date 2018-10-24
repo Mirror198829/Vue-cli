@@ -63,6 +63,44 @@ for(let arr in testData){
 delete testData.title //可以
 console.log(testData)
 ```
+实现数据响应的示例
+``` javascript
+let btn1 = document.getElementById('btn1')
+let btn2 = document.getElementById('btn2') 
+let txt = document.getElementById('title')
+let data = {
+  title:'新闻',
+  name:'小说'
+}
+let val = '新的值'
+
+//数据劫持
+observer(data)
+function observer(obj){
+  Object.keys(obj).forEach(item => {
+    defineReactive(obj,item,obj[item])
+  })
+}
+function defineReactive(obj,key,value){
+  Object.defineProperty(obj,key,{
+    get(){
+      return value
+    },
+    set(newValue){
+      console.log(`触发了吗`)
+      value = newValue
+      txt.innerText = value
+    }
+  })
+}
+
+btn1.onclick = () => {
+  data.title = 'title' 
+}
+btn2.onclick = () => {
+  data.name = 'name'
+}
+``
 ## 声明式渲染
 * 声明式
 只要声明在哪里做什么，无需关心如何实现
