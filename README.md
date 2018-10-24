@@ -5,8 +5,8 @@
 > 把一个普通的Javascript对象传给Vue实例的data选项。  
 Vue将遍历此对象所有属性，并使用`Object.defineProperty`,把这些属性全部转成为getter/setter。  
 Vue内部会对数据进行劫持操作，进而追踪依赖，在属性被访问和修改时通知变化。  
-####### 数据描述
-|属性|内容|
+###### 数据描述  
+| 属性 | 内容 |
 |---|---|
 | writable | 是否允许重新改写。默认：false |
 | enumerable | 是否允许枚举，即是否可被遍历。默认：false |
