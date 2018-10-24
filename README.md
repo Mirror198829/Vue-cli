@@ -12,6 +12,11 @@ Vue内部会对数据进行劫持操作，进而追踪依赖，在属性被访�
 | enumerable | 是否允许枚举，即是否可被遍历。默认：false |
 | configurable | 是否允许删除。默认：false |
 
+###### 访问器描述  
+* getter是一种获得属性值的方法  
+* setter是一种设置属性值的方法
+* 可以写configurable、enumerable
+* 不能写value writable
 ``` javascript
 //使用数据时，要先对数据进行劫持（代理）
 //使用Object.defineProperty劫持数据，把属性转成访问器的方式
